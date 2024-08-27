@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Status Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .login input {
+      width: 100%;
+    }
+
+    .prediction {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Booking Status Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Number_of_Adults" placeholder="Number of Adults" required="required" />
+      <input type="text" name="Number_of_Children" placeholder="Number of Children" required="required" />
+      <input type="text" name="Number_of_Weekend_Nights" placeholder="Number of Weekend Nights" required="required" />
+      <input type="text" name="Number_of_Week_Nights" placeholder="Number of Week Nights" required="required" />
+      <input type="text" name="Type_of_Meal" placeholder="Type of Meal" required="required" />
+      <input type="text" name="Car_Parking_Space" placeholder="Car Parking Space" required="required" />
+      <input type="text" name="Room_Type" placeholder="Room Type" required="required" />
+      <input type="text" name="Lead_Time" placeholder="Lead Time" required="required" />
+      <input type="text" name="Market_Segment_Type" placeholder="Market Segment Type" required="required" />
+      <input type="text" name="Repeated" placeholder="Repeated" required="required" />
+      <input type="text" name="P_C" placeholder="P-C" required="required" />
+      <input type="text" name="P_not_C" placeholder="P-not-C" required="required" />
+      <input type="text" name="Average_Price" placeholder="Average Price" required="required" />
+      <input type="text" name="Special_Requests" placeholder="Special Requests" required="required" />
+
+      <!-- Separate fields for year, month, and day -->
+      <input type="text" name="Year" placeholder="Year" required="required" />
+      <input type="text" name="Month" placeholder="Month" required="required" />
+      <input type="text" name="Day" placeholder="Day" required="required" />
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+  </div>
+
+  <div class="prediction">
+    <br>
+    {{ prediction_text }}
+  </div>
+</body>
+
+</html>
