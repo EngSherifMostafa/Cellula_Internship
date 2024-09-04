@@ -1,3 +1,0 @@
-ان شاء الله التاسك الجديدة نزلت و هي انك تعمل fine tune ل pretrained model عنفس داتا و بعدين تعمل deploy ب استخدام stramlit
-
-https://forms.gle/uefmWcMCVfTwGtz78
