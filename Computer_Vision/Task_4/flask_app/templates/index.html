@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Water Segmentation</h1>
+            <p>Upload a .tif image to generate a water segmentation mask.</p>
+        </header>
+        <section>
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <label for="file">Upload Image (.tif):</label>
+                <input type="file" id="file" name="image" accept=".tif" required>
+                <button type="submit">Start Prediction</button>
+            </form>
+        </section>
+        
+        {% if prediction %}
+        <section class="result">
+            <h2>Prediction Result:</h2>
+            <img src="{{ prediction }}" alt="Segmentation Result" aria-label="Segmented image">
+        </section>
+        {% endif %}
+    </main>
+</body>
+</html>
