@@ -3,9 +3,3 @@
 
 ### Linkedin Page
 ### https://eg.linkedin.com/company/cellula-technologies?trk=public_post_feed-actor-name
-
-### Dataset for all tasks (Machine Learning)
-### https://drive.google.com/drive/folders/1anCHCOlw1JeVNXo3wuUtcRCxTxySo32h?usp=drive_link
-
-### Dataset for all tasks (Computer Vision)
-### https://drive.google.com/
